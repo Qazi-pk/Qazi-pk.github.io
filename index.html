@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qazi M. Hanif — Independent Researcher</title>
+<meta name="description" content="Qazi M. Hanif, independent researcher in Khyber Pakhtunkhwa, Pakistan. Builder of PIR, a classical engine that recovers physical laws from noisy data.">
+<meta property="og:title" content="Qazi M. Hanif — Independent Researcher">
+<meta property="og:description" content="Builder of PIR, a classical engine that recovers physical laws from noisy data. Research, profiles and contact in one place.">
+<meta property="og:type" content="profile">
+<style>
+  :root {
+    --bg: #f7f4ee; --card: #fffdf9; --ink: #1d1b18; --muted: #6b655c;
+    --rule: #e4ddd1; --accent: #7a2a1f; --soon: #a59d90;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161513; --card: #1f1d1a; --ink: #ece7de; --muted: #a39b8e;
+      --rule: #34302a; --accent: #e08a74; --soon: #6d665c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 Georgia, "Times New Roman", serif;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 48px 16px 64px; }
+  h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 6px; font-weight: normal; }
+  .role { color: var(--muted); margin: 0 0 20px; font-family: system-ui, sans-serif; font-size: .95rem; }
+  .bio { margin: 0 0 28px; }
+  .facts { list-style: none; padding: 0; margin: 0 0 36px; border-left: 3px solid var(--accent); }
+  .facts li { padding: 4px 0 4px 14px; font-family: system-ui, sans-serif; font-size: .93rem; }
+  h2 {
+    font-family: system-ui, sans-serif; font-size: .78rem; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); margin: 32px 0 10px; font-weight: 600;
+  }
+  .links { display: grid; gap: 8px; }
+  .link {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    background: var(--card); border: 1px solid var(--rule); border-radius: 8px;
+    padding: 12px 14px; color: var(--ink); text-decoration: none;
+    font-family: system-ui, sans-serif; font-size: .95rem;
+  }
+  a.link:hover { border-color: var(--accent); }
+  .link small { color: var(--muted); font-size: .8rem; text-align: right; }
+  .link.soon { color: var(--soon); }
+  .link.soon small { color: var(--soon); font-style: italic; }
+  footer {
+    margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--rule);
+    color: var(--muted); font-family: system-ui, sans-serif; font-size: .82rem;
+  }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Qazi M. Hanif</h1>
+  <p class="role">Independent Researcher · Khyber Pakhtunkhwa, Pakistan</p>
+
+  <p class="bio">I build <strong>PIR</strong> (Physics Intermediate Representation), a classical engine that
+  recovers closed-form physical laws from noisy data using log-linearization, dimensional scoring and sparse
+  regression. No black box: the output is an equation you can check by hand.</p>
+
+  <ul class="facts">
+    <li>Merged into SRBench's standard benchmark (cavalab/srbench PR #210)</li>
+    <li>12/44 exact symbolic recovery on Feynman Tier A, blind (v3.4)</li>
+    <li>Franka Panda robot dynamics case study, published on Zenodo</li>
+  </ul>
+
+  <div id="groups"></div>
+
+  <footer>
+    <a href="mailto:qmhanif70@gmail.com">qmhanif70@gmail.com</a> ·
+    Open to collaboration, benchmark review and consulting in physics-informed model identification.
+  </footer>
+</main>
+
+<script>
+/* ============================================================
+   EDIT LINKS HERE.
+   To turn on a "coming soon" item, replace null with its URL
+   in quotes, e.g.  url: "https://www.linkedin.com/in/yourname"
+   ============================================================ */
+const GROUPS = [
+  { title: "Research", items: [
+    { name: "PIR project page",      note: "results & papers",   url: "https://qazi-pk.github.io/physics-engine/" },
+    { name: "Source code (GitHub)",  note: "Qazi-pk",            url: "https://github.com/Qazi-pk/physics-engine" },
+    { name: "Live demo",             note: "Hugging Face",       url: "https://huggingface.co/spaces/Qazihanif/pir-demo" },
+    { name: "SRBench PR #210",       note: "cavalab/srbench",    url: "https://github.com/cavalab/srbench/pull/210" },
+    { name: "Franka Panda case study", note: "Zenodo",           url: "https://doi.org/10.5281/zenodo.22157422" },
+    { name: "PIR v3.4.1 paper",      note: "Zenodo",             url: "https://doi.org/10.5281/zenodo.21351039" }
+  ]},
+  { title: "Researcher identity", items: [
+    { name: "ORCID",                 note: "0009-0003-2818-5449", url: "https://orcid.org/0009-0003-2818-5449" },
+    { name: "Google Scholar",        note: "",                   url: null }
+  ]},
+  { title: "Work with me", items: [
+    { name: "Fiverr",                note: "",                   url: null },
+    { name: "Upwork",                note: "",                   url: null }
+  ]},
+  { title: "Follow", items: [
+    { name: "X",                     note: "@pir_physics",       url: "https://x.com/pir_physics" },
+    { name: "LinkedIn",              note: "",                   url: null },
+    { name: "YouTube",               note: "",                   url: null },
+    { name: "Facebook",              note: "",                   url: null }
+  ]}
+];
+
+const root = document.getElementById("groups");
+for (const g of GROUPS) {
+  const h = document.createElement("h2");
+  h.textContent = g.title;
+  const box = document.createElement("div");
+  box.className = "links";
+  for (const it of g.items) {
+    const el = document.createElement(it.url ? "a" : "div");
+    el.className = "link" + (it.url ? "" : " soon");
+    if (it.url) { el.href = it.url; el.rel = "noopener"; }
+    const label = document.createElement("span");
+    label.textContent = it.name;
+    const note = document.createElement("small");
+    note.textContent = it.url ? it.note : "coming soon";
+    el.append(label, note);
+    box.append(el);
+  }
+  root.append(h, box);
+}
+</script>
+</body>
+</html>
